@@ -1,11 +1,12 @@
-const dataOfJson = async () => {
+const dataOfJsoninGalarys = async () => {
     const red = await fetch('https://jsonplaceholder.typicode.com/photos');
     const data = await red.json();
-    displayJust3data(data);
+    displayJust3dataingalarys(data);
 }
-const displayJust3data = photos => {
-    const galaryJson = document.getElementById('galary-json');
-    photos = photos.slice(0, 3);
+const displayJust3dataingalarys = photos => {
+
+    const galaryJson = document.getElementById('galary-json-segend');
+    photos = photos.slice(0, 39);
     photos.forEach(photo => {
         const { title, url, thumbnailUrl } = photo;
         const div = document.createElement('div');
@@ -15,7 +16,7 @@ const displayJust3data = photos => {
                         <img src="${url}" class="card-img-top h-50" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">${title.slice(0, 30)}</h5>
-                            <button id="galary-json" onclick="dataOfJsoninGalarys ()" type="button" class="btn w-100 btn-secondary btn-sm">Vew All</button>
+                            <button type="button" class="btn w-100 btn-secondary btn-sm">Vew All</button>
                         </div>
                     </div>
         `;
@@ -23,7 +24,4 @@ const displayJust3data = photos => {
 
     });
 }
-dataOfJson();
-document.getElementById('galary-json').addEventListener("click", function () {
-    window.location.href = "json.html";
-})
+dataOfJsoninGalarys();
